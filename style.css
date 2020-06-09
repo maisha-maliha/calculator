@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto',
+    sans-serif;
+    color: var(--c);
+}
+
+:root{
+    --c:rgb(77, 77, 255);
+    --b: 3px solid rgb(77, 77, 255);
+}
+
+.box{
+    margin: 50px auto;
+    background-color: aliceblue;
+    width: 90%;
+    max-width: 300px;
+    max-height: 90%;
+    height: 500px;
+    border: var(--b);
+}
+.container{
+    width: 90%;
+    height: 93%;
+    margin: 10px auto;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-areas:
+    'dis dis dis dis'
+    'num num num op'
+    'num num num op'
+    'num num num op'
+    'num num num op'
+    'cl er z op'
+    'res res res op'
+    ;
+}
+.display{
+    grid-area: dis;
+    border: var(--b);
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+}
+.display span:nth-of-type(2){
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.display span:nth-of-type(1){
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 2rem;
+}
+.numbers{
+    grid-area: num;
+    /* border:1px solid black; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.num,.op, .erase,.cl{
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    border: var(--b);
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.operators{
+    grid-area: op;
+    /* border:1px solid black; */
+    display: grid;
+    padding: 10px 0;
+    grid-template-rows: repeat(5,1fr);
+}
+.result{
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    grid-area: res;
+    text-align: center;
+    border: var(--b);
+    width: 88%;
+    font-size: 30px;
+    height: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.erase{
+    grid-area: er;
+}
+.num:nth-of-type(10){
+    grid-area: z;
+}
+.cl{
+    grid-area: cl;
+}
